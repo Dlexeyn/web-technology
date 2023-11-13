@@ -1,0 +1,42 @@
+mixin createCatalog(data)
+        - let index = 1;
+        each item in data
+            .col-lg-4
+                .text-center.card-box
+                    .member-card.pt-2.pb-2
+                        .thumb-lg.member-thumb.mx-auto
+                            img.rounded-circle.img-thumbnail(src='/images/avatar.png' alt='profile-image')
+                        div
+                            h4 #{item.lastName} #{item.name} #{item.middleName}
+                            p.text-pink #{item.mail}
+                            p.text-muted #{item.birthDate}
+
+                        .row
+                            .col-6
+                                p.mb-0.text-muted Роль
+                                select(id="slctRole_" + index class='select-role')
+                                    option(value='admin_' + item.id) администратор
+                                    option(value='user_' + item.id) пользователь
+                                p.mb-0.text-muted Статус
+                                select(id="slctStatus_" + index class='select-status')
+                                    option(value='notconfirmed_' + item.id) не подтверждённый пользователь
+                                    option(value='active_' + item.id) активный
+                                    option(value='banned_' + item.id) заблокированный
+                                script.
+                                    $('#slctRole_' + "!{index}" + ' option:contains(' + '!{item.role}' + ')').prop({selected: true});
+                                    $('#slctStatus_' + "!{index}" + ' option:contains(' + '!{item.status}' + ')').prop({selected: true});
+                                - index++;
+                        .mt-4
+                            .row
+                                .col-6
+                                    .mt-3
+                                        a.btn.btn-primary.mt-3.btn-rounded.waves-effect.w-md.waves-light(href='/api/admin/friends/'+item.id
+                                            type='button') Список друзей
+                                //.col-6
+                                //    .mt-3
+                                //        a.btn.btn-primary.mt-3.btn-rounded.waves-effect.w-md.waves-light(href='/users/news/'+item.id type='button') Новости
+                            row
+                                .col-xl-12
+                                    .mt-3
+                                        a.btn.btn-primary.mt-3.btn-rounded.waves-effect.w-md.waves-light(href='/api/test/user/'+item.id
+                                            type='button') Перейти в профиль

@@ -1,0 +1,66 @@
+doctype html
+head
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='/public/stylesheet/search.css')
+    link(rel='stylesheet' href='/public/stylesheet/bar.css')
+    link(rel='stylesheet' href='/public/stylesheet/table.css')
+    link(rel='stylesheet' href='/public/stylesheet/panelItems.css')
+    link(rel='stylesheet' href='/public/stylesheet/rowsAndColumns.css')
+    link(href="/public/stylesheet/w3.css" rel="stylesheet")
+    link(rel="icon" type="image/x-icon" href="/public/images/favicon.ico")
+    script(src="/public/scripts/search.js")
+body
+    .navbar
+        a(href='/books/')
+            i.fa.fa-fw.fa-home
+            |  Таблица
+        a.active(href='#')
+            i.fa.fa-fw.fa-search
+            |  Поиск
+        a(href='/books/new-book/')
+            i.fa.fa-fw.fa-plus
+            |  Новая книга
+    .form-container
+        .row
+            .col-75
+                .container
+                    .row
+                        .col-50
+                            .d1
+                                input(type='text'
+                                    placeholder='Искать здесь...'
+                                    name="search"
+                                    id='sField'
+                                    onkeydown="if (event.keyCode == 13) document.getElementById('requestButton').click()")
+                                button(id='requestButton'
+                                    type="submit"
+                                    onclick=`searchClick()`)
+                                    i(class="fa fa-search")
+                        .col-50
+                            label(for='date' class="input")
+                                i.fa.fa-calendar-check-o
+                                |  Дата возврата:&#10
+                            input(type="date" id="date")
+                            label(class="inStock") Только в наличии:&#10
+                                label(class="switch")
+                                    input(type="checkbox" id="inStock")
+                                    span(class="slider round")
+
+
+    div(class="w3-container")
+        table(class="table" id="outputTable")
+            thead
+                tr
+                    th Название
+                    th Автор
+                    th Год издания
+                    th В наличии
+                    th Дата возврата
+            tbody
+                tr
+                    td
+                    td
+                    td
+                    td
+                    td

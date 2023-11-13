@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Username Input</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="form_auth_block">
+            <h1 class="form_auth_block_head_text">Игра Tetris</h1>
+            <p class="form_auth_block_paragraph_text">Введите имя игрока:</p>
+            <form id="form_auth_block">
+	            <input type="text" id="username" placeholder="Имя пользователя"/><br/><br/>
+                <input type="submit" id="enter" value="Ввод" />
+            </form>
+        </div>
+        <script>
+            document.getElementById("form_auth_block").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const username = document.getElementById("username").value;
+
+                if (username.trim() !== "") {
+                    localStorage.setItem("username", username);
+
+                    window.location.href = "./nested/main.html";
+                } else {
+                    alert("Введите непустую строку.");
+                }
+            });
+        </script>
+    </body>
+</html>

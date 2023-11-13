@@ -1,0 +1,28 @@
+<div id="nav-bar">
+  <div id="nav-bar-content">
+    <div id="nav-bar-left">
+      <div *ngIf="isLoggedIn" class="nav-bar-items" style="font-size: 1.5em">
+        Привет, {{username}}
+      </div>
+      <div *ngIf="isLoggedIn" class="nav-bar-items">
+        <a href="{{serverHref}}/api/test/user/{{getUserId()}}">Профиль</a>
+      </div>
+      <div *ngIf="isAdmin()" class="nav-bar-items">
+        <a href="{{serverHref}}/api/admin/getAll/">Панель администратора</a>
+      </div>
+      <div *ngIf="isLoggedIn" class="nav-bar-items">
+        <a href="postComp/">Новости</a>
+      </div>
+    </div>
+    <div id="nav-bar-right">
+      <div *ngIf="!isLoggedIn" (click)="onLoginClick()"
+        style="font-size: 1.5em" class="nav-bar-items">Вход</div>
+
+      <div *ngIf="isLoggedIn" (click)="onLogoutClick()"
+           style="font-size: 1.5em" class="nav-bar-items">Выход</div>
+
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

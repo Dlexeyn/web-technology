@@ -1,0 +1,42 @@
+{
+  "name": "SocialMediaServer",
+  "version": "1.0.0",
+  "description": "Node express server for SocialMedia",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --verbose app/__tests__/api.tests.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "jwt",
+    "login",
+    "registration",
+    "rest api",
+    "authentication",
+    "authorization"
+  ],
+  "author": "Dlexeyn",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "less-middleware": "^3.1.0",
+    "nodemon": "^3.0.1",
+    "pug": "^3.0.2",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}

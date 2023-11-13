@@ -1,0 +1,8 @@
+{
+  "secret": "-secret-key",
+  "users": "./app/models/storage/users.json",
+  "friends": "./app/models/storage/friends.json",
+  "news": "./app/models/storage/news.json",
+  "passwords": "./app/models/storage/usersPasswords.json",
+  "server": "http://localhost:8080"
+}

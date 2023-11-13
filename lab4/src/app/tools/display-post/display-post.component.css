@@ -1,0 +1,15 @@
+.mat-card{
+  padding: 1px !important;
+  margin: 20px 0;
+  border: 3px solid #772b9a;
+  background-color: #f1f1f1;
+}
+
+.mat-card-subtitle{
+  color: #772b9a;
+}
+
+.action-item {
+  margin-left: .5em;
+  cursor: pointer;
+}

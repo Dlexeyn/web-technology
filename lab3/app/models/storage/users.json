@@ -1,0 +1,174 @@
+[
+    {
+        "id": 1,
+        "name": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Иванович",
+        "mail": "ivanov@example.com",
+        "birthDate": "1990-05-15",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 2,
+        "name": "Петр",
+        "lastName": "Петров",
+        "middleName": "Петрович",
+        "mail": "petrov@example.com",
+        "birthDate": "1985-12-10",
+        "status": "не подтверждённый пользователь",
+        "role": "пользователь"
+    },
+    {
+        "id": 3,
+        "name": "Анна",
+        "lastName": "Сидорова",
+        "middleName": "Александровна",
+        "mail": "anna@example.com",
+        "birthDate": "1978-07-25",
+        "status": "заблокированный",
+        "role": "администратор"
+    },
+    {
+        "id": 4,
+        "name": "Мария",
+        "lastName": "Козлова",
+        "middleName": "Сергеевна",
+        "mail": "kozlova@example.com",
+        "birthDate": "1982-04-18",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 5,
+        "name": "Алексей",
+        "lastName": "Смирнов",
+        "middleName": "Александрович",
+        "mail": "smirnov@example.com",
+        "birthDate": "1995-09-05",
+        "status": "не подтверждённый пользователь",
+        "role": "пользователь"
+    },
+    {
+        "id": 6,
+        "name": "Елена",
+        "lastName": "Морозова",
+        "middleName": "Игоревна",
+        "mail": "morozova@example.com",
+        "birthDate": "1989-12-30",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 7,
+        "name": "Дмитрий",
+        "lastName": "Кузнецов",
+        "middleName": "Анатольевич",
+        "mail": "kuznetsov@example.com",
+        "birthDate": "1983-06-21",
+        "status": "заблокированный",
+        "role": "администратор"
+    },
+    {
+        "id": 8,
+        "name": "Александра",
+        "lastName": "Тимофеева",
+        "middleName": "Ивановна",
+        "mail": "timofeeva@example.com",
+        "birthDate": "1977-11-08",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 9,
+        "name": "Сергей",
+        "lastName": "Никитин",
+        "middleName": "Сергеевич",
+        "mail": "nikitin@example.com",
+        "birthDate": "1992-02-22",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 10,
+        "name": "Ольга",
+        "lastName": "Павлова",
+        "middleName": "Андреевна",
+        "mail": "pavlova@example.com",
+        "birthDate": "1986-08-17",
+        "status": "не подтверждённый пользователь",
+        "role": "пользователь"
+    },
+    {
+        "id": 11,
+        "name": "Максим",
+        "lastName": "Киселев",
+        "middleName": "Дмитриевич",
+        "mail": "kiselev@example.com",
+        "birthDate": "1974-03-14",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 12,
+        "name": "Екатерина",
+        "lastName": "Орлова",
+        "middleName": "Сергеевна",
+        "mail": "orlova@example.com",
+        "birthDate": "1988-06-02",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 13,
+        "name": "Денис",
+        "lastName": "Андреев",
+        "middleName": "Александрович",
+        "mail": "andreev@example.com",
+        "birthDate": "1993-09-29",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 14,
+        "name": "Татьяна",
+        "lastName": "Григорьева",
+        "middleName": "Владимировна",
+        "mail": "grigoryeva@example.com",
+        "birthDate": "1984-04-12",
+        "status": "заблокированный",
+        "role": "администратор"
+    },
+    {
+        "id": 15,
+        "name": "Артем",
+        "lastName": "Васильев",
+        "middleName": "Артемович",
+        "mail": "vasilyev@example.com",
+        "birthDate": "1991-01-07",
+        "status": "активный",
+        "role": "пользователь"
+    },
+    {
+        "id": 25,
+        "name": "Елена",
+        "lastName": "Найденова",
+        "middleName": "Витальевна",
+        "mail": "lena@example.com",
+        "birthDate": "2003-07-25",
+        "status": "активный",
+        "role": "администратор"
+    },
+    {
+        "id": 16,
+        "mail": "leks@gmail.com",
+        "name": "Alexey",
+        "lastName": "Osipov"
+    },
+    {
+        "id": 18,
+        "mail": "galenko@gmail.com",
+        "name": "Leksey",
+        "lastName": "Osipov"
+    }
+]

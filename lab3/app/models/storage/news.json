@@ -1,0 +1,156 @@
+[
+    {
+        "news": [
+            {
+                "id": 3,
+                "content": "Привет))",
+                "date": "2023-10-29"
+            }
+        ],
+        "userID": 1
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content2",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 2
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content3",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 3
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content4",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 4
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content5",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 5
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content6",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 6
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content7",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 7
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content8",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 8
+    },
+    {
+        "news": [],
+        "userID": 9
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content10",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 10
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content11",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 11
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content12",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 12
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content13",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 13
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content14",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 14
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content15",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 15
+    },
+    {
+        "news": [
+            {
+                "id": 1,
+                "content": "content25",
+                "date": "2023-05-15"
+            }
+        ],
+        "userID": 25
+    }
+]

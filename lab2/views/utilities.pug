@@ -1,0 +1,24 @@
+mixin createBookTable(bookData)
+    table(class="table")
+        thead
+            tr
+                th Название
+                th Автор
+                th Год издания
+                th В наличии
+                th Дата возврата
+        tbody
+        each item in bookData
+            tr
+                td
+                    a(href='/books/' + item.id) #{item.title}
+                td #{item.author}
+                td #{item.edition_year}
+                td #{item.inStock}
+                td #{item.date}
+
+mixin createButton(status)
+    if status === true
+        input(type='submit' value='Взять' class="btn" onclick='takeClick()')
+    else
+        input(type='submit' value='Вернуть' class="btn" onclick="returnClick()")

@@ -1,0 +1,110 @@
+include utilities
+doctype html
+head
+    meta(charset="utf-8")
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='../public/stylesheet/book.css')
+    link(rel='stylesheet' href='/public/stylesheet/bar.css')
+    link(rel='stylesheet' href='/public/stylesheet/rowsAndColumns.css')
+    link(rel='stylesheet' href='/public/stylesheet/buttons.css')
+    link(rel='stylesheet' href='/public/stylesheet/edit.css')
+    link(href="/public/stylesheet/w3.css" rel="stylesheet")
+    link(rel="icon" type="image/x-icon" href="/public/images/favicon.ico")
+    script(src="/public/scripts/manageBook.js")
+body
+    .navbar
+        a(href='/books/')
+            i.fa.fa-fw.fa-home
+            |  Таблица
+        a(href='/books/search/')
+            i.fa.fa-fw.fa-search
+            |  Поиск
+        a(href='/books/new-book/')
+            i.fa.fa-fw.fa-plus
+            |  Новая книга
+        a.active(href='#')
+            i.fa.fa-fw.fa-book
+            |  Книга
+    .book-container
+        .row
+            .col-75
+                .container
+                    .row(id="book")
+                        .col-50
+                            .row
+                                label
+                                    i.fa.fa-user
+                                    |  Автор:&#10
+                                    output(name='author') #{item.author}
+                            .row
+                                label
+                                    i.fa.fa-book
+                                    |  Название:&#10
+                                    output(name='title') #{item.title}
+                            label
+                                i.fa.fa-clock-o
+                                |  Год издания:&#10
+                                output(name='edition') #{item.edition_year}
+                            label
+                                i.fa.fa-calendar-times-o
+                                |  Дата возврата:&#10
+                                output(name='date') #{item.date}
+                            .row
+                                .col-20
+                                    label
+                                        i.fa.fa-key
+                                        |  ID:&#10
+                                        output(name='ID' id="outId") #{item.id}
+                                .col-20
+                                    label
+                                        i.fa.fa-check
+                                        |  В наличии:&#10
+                                        output(name='inStock') #{item.inStock}
+                                        -var ID = item.id
+                            if item.inStock === false
+                                .row
+                                    label
+                                        i.fa.fa-book
+                                        |  Читатель:&#10
+                                        output(name='title') #{item.userName}
+                    .row
+                        .form-popup-take(id= "form-take" class="w3-modal w3-modal-content popup")
+                                span(class="w3-button w3-display-topright"
+                                    onclick='closeForm("form-take")') &times;
+
+                                .row
+                                    .col-50
+                                        h2 Взять книгу
+                                        p ФИО читателя
+                                        input(required type='text' name="name" id='takeName')
+                                        p Дата возврата
+                                        input(required type="date" name="date" id='takeDate')
+                                        p
+                                        button(class="btn" type="submit" onclick="takeBookClick()") Взять
+                    .row
+                        .form-popup-delete(id='form-delete' class="w3-modal w3-modal-content popup")
+                            span(class="w3-button w3-display-topright"
+                                onclick='closeForm("form-delete")') &times;
+                            .col-50
+                                h4 Подтверждение удаления
+                                input.btn.delete(type='submit' value='Удалить' onclick='deleteBookClick()')
+                    .row
+                        .form-popup-return(id='form-return' class="w3-modal w3-modal-content popup")
+                            span(class="w3-button w3-display-topright"
+                                onclick='closeForm("form-return")') &times;
+                            .col-50
+                                h4 Подтверждение возвращения
+                                input.btn.delete(type='submit' value='Вернуть' onclick='returnBookClick()')
+                    .row(id='buttons')
+                        .col-75
+                            if item.inStock === true
+                                input(type='submit' value='Взять' class="btn" onclick='openForm("form-take")')
+                            else
+                                input(type='submit' value='Вернуть' class="btn" onclick='openForm("form-return")')
+                        .col-50
+                            form(action='/books/edit/'+ID method='get')
+                                input(type='submit' value='Изменить' class="btn")
+                        .col-50
+                            input(type='submit' value='Удалить' class="btn" id="open-button" onclick='openForm("form-delete")')
+
+

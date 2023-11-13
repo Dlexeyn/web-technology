@@ -1,0 +1,38 @@
+.container {
+    background-color: #e8e8e8;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid #4CAF50;
+    border-radius: 10px;
+}
+
+.form-container {
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-collapse: separate;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+}
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+}
+.col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+}
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+}

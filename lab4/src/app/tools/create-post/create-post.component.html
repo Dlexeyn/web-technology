@@ -1,0 +1,14 @@
+<mat-card class="mat-card-create-post">
+  <mat-card-header>
+    <mat-card-title>Create Post</mat-card-title>
+  </mat-card-header>
+  <div>
+    <textarea #postText placeholder="Type Message..."></textarea>
+  </div>
+
+  <mat-card-actions align="end">
+    <button (click)="onPostClick(postText)"
+            mat-flat-button color="accent">Post</button>
+  </mat-card-actions>
+
+</mat-card>

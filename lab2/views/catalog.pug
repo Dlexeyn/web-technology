@@ -1,0 +1,24 @@
+include utilities
+doctype html
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        link(href="/public/stylesheet/w3.css" rel="stylesheet")
+        link(href="/public/stylesheet/bar.css" rel="stylesheet")
+        link(href="/public/stylesheet/table.css" rel="stylesheet")
+        link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+        link(rel="icon" type="image/x-icon" href="/public/images/favicon.ico")
+    body
+        .navbar
+            a.active(href='#')
+                i.fa.fa-fw.fa-home
+                |  Таблица
+            a(href='/books/search/')
+                i.fa.fa-fw.fa-search
+                |  Поиск
+            a(href='/books/new-book/')
+                i.fa.fa-fw.fa-plus
+                |  Новая книга
+    div(class="w3-container")
+        +createBookTable(data)

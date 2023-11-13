@@ -1,0 +1,30 @@
+#profile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #1d1d1d;
+  z-index: 0;
+  transition-duration: .5s;
+  overflow: hidden;
+}
+
+#profile-content{
+  width: 100%;
+  max-width: 500px;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+input, textarea{
+  width: 100%;
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: .5em;
+  resize: none;
+  outline: none;
+  border: 1px solid grey;
+  box-sizing: border-box;
+
+}
+

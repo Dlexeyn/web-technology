@@ -1,0 +1,53 @@
+@import "buttons";
+
+.container {
+  background-color: #e8e8e8;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid @color;
+  border-radius: 10px;
+}
+
+.form-container {
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border-collapse: separate;
+}
+
+.row(@x: 0px) {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: @x;
+}
+
+.mixin-row50{
+  .row(@x: 50px)
+}
+
+.mixin-row25{
+  .row(@x: 25px)
+}
+
+.mixin-row10{
+  .row(@x: 10px)
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}

@@ -1,0 +1,63 @@
+
+* {
+    box-sizing: border-box;
+}
+.container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input:focus{
+    border: 2px solid #45a049;
+    outline-offset: 0px;
+    outline: none;
+}
+
+label.input {
+    margin: 10px;
+    padding: 5px;
+    display: block;
+    font-size: 18px;
+
+}
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+a {
+    color: #2196F3;
+}
+
+hr {
+    border: 1px solid lightgrey;
+}
+
+label.inStock{
+    margin-left: 20px;
+    display: block;
+    font-size: 18px;
+}
+
+.form-container {
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-collapse: separate;
+}
+
+#bookBtn{
+    visibility: hidden;
+}

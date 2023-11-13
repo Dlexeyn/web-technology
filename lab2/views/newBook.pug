@@ -1,0 +1,64 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet' href='/public/stylesheet/edit.css')
+        link(rel='stylesheet' href='/public/stylesheet/buttons.css')
+        link(rel='stylesheet' href='/public/stylesheet/bar.css')
+        link(rel='stylesheet' href='/public/stylesheet/rowsAndColumns.css')
+        link(href="/public/stylesheet/w3.css" rel="stylesheet")
+        link(rel="icon" type="image/x-icon" href="/public/images/favicon.ico")
+        script(src="/public/scripts/addBook.js")
+    body
+        .navbar
+            a(href='/books/')
+                i.fa.fa-fw.fa-home
+                |  Таблица
+            a(href='/books/search/')
+                i.fa.fa-fw.fa-search
+                |  Поиск
+            a.active(href='#')
+                i.fa.fa-fw.fa-plus
+                |  Новая нига
+        .form-container
+            .row
+                .col-75
+                    .container
+                        .row
+                            .col-50
+                                label(for='author' class="input")
+                                    i.fa.fa-user
+                                    |  Автор:
+                                input#author(type='text' name='author' placeholder='Автор')
+                                label(for='title' class="input")
+                                    i.fa.fa-book
+                                    |  Название:
+                                input#title(type='text' name='title' placeholder='Название')
+                            .col-50
+                                label(for='edition' class="input")
+                                    i.fa.fa-clock-o
+                                    |  Год издания:
+                                input#edition(type="date" name='edition')
+                                label(for='date' class="input")
+                                    i.fa.fa-calendar-check-o
+                                    |  Дата возврата:
+                                input#date(type="date" name='date')
+                        .row
+                            .col-50
+                                label(for='user' class="input")
+                                    i.fa.fa-user
+                                    |  Читатель:
+                                input#user(type='text' name='user' placeholder='Читатель')
+                            .col-50
+                                label(for='user' class="input")
+                                    i.fa.fa-check-circle-o
+                                    |  В наличии:
+                                label(class="switch")
+                                    input(type="checkbox" id="inStock")
+                                    span(class="slider round")
+                            input(type='submit' value='Добавить' class="btn" onclick='addClick()')
+        input(type='submit' value='Перейти к книге' class="btn" id="bookBtn")
+

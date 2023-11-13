@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        link(href="/public/stylesheet/w3.css" rel="stylesheet")
+        link(href="/public/stylesheet/bar.css" rel="stylesheet")
+        link(rel='stylesheet' href='/public/stylesheet/rowsAndColumns.css')
+        link(rel='stylesheet' href='/public/stylesheet/buttons.css')
+        link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+        link(rel="icon" type="image/x-icon" href="/public/images/favicon.ico")
+    body
+        .navbar
+            a.active(href='#')
+                i.fa.fa-fw.fa-home
+                |  Библиотека
+        .form-container
+                    .row
+                        .col-75
+                            a(href='/books/' class='btn')
+                                i.fa.fa-fw.fa-play
+                                |  Войти

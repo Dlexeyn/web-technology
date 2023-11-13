@@ -1,0 +1,305 @@
+[
+    {
+        "id": 7,
+        "author": "Harper Lee",
+        "title": "To Kill a Mockingbird",
+        "edition_year": "1960-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 8,
+        "author": "J.K. Rowling",
+        "title": "Harry Potter and the Philosopher's Stone",
+        "edition_year": "1997-01-01",
+        "inStock": "true",
+        "date": "",
+        "userName": ""
+    },
+    {
+        "id": 9,
+        "author": "J.R.R. Tolkien",
+        "title": "The Hobbit",
+        "edition_year": "1937-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 10,
+        "author": "Ernest Hemingway",
+        "title": "The Old Man and the Sea",
+        "edition_year": "1952-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 11,
+        "author": "Herman Melville",
+        "title": "Moby-Dick",
+        "edition_year": "1851-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 12,
+        "author": "Charles Dickens",
+        "title": "Great Expectations",
+        "edition_year": "1861-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 13,
+        "author": "Aldous Huxley",
+        "title": "Brave New World",
+        "edition_year": "1932-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 14,
+        "author": "Agatha Christie",
+        "title": "Murder on the Orient Express",
+        "edition_year": "1934-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 15,
+        "author": "Virginia Woolf",
+        "title": "To the Lighthouse",
+        "edition_year": "1927-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 16,
+        "author": "Toni Morrison",
+        "title": "Beloved",
+        "edition_year": "1987-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 17,
+        "author": "Homer",
+        "title": "The Iliad",
+        "edition_year": "1-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 18,
+        "author": "F. Scott Fitzgerald",
+        "title": "The Great Gatsby",
+        "edition_year": "1925-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 19,
+        "author": "J.D. Salinger",
+        "title": "The Catcher in the Rye",
+        "edition_year": "1951-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 20,
+        "author": "Kurt Vonnegut",
+        "title": "Slaughterhouse-Five",
+        "edition_year": "1969-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 21,
+        "author": "F. Scott Fitzgerald",
+        "title": "Tender Is the Night",
+        "edition_year": "1934-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 22,
+        "author": "Emily Dickinson",
+        "title": "The Collected Poems of Emily Dickinson",
+        "edition_year": "1890-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 23,
+        "author": "Lewis Carroll",
+        "title": "Alice's Adventures in Wonderland",
+        "edition_year": "1865-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 24,
+        "author": "Ayn Rand",
+        "title": "Atlas Shrugged",
+        "edition_year": "1957-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 25,
+        "author": "Antoine de Saint-Exupéry",
+        "title": "The Little Prince",
+        "edition_year": "1943-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 26,
+        "author": "Arthur Conan Doyle",
+        "title": "The Adventures of Sherlock Holmes",
+        "edition_year": "1892-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 27,
+        "author": "Aesop",
+        "title": "Aesop's Fables",
+        "edition_year": "1-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 28,
+        "author": "Ray Bradbury",
+        "title": "Fahrenheit 451",
+        "edition_year": "1953-01-01",
+        "inStock": false,
+        "date": "2023-10-01",
+        "userName": "Lehridrid"
+    },
+    {
+        "id": 29,
+        "author": "Edgar Allan Poe",
+        "title": "The Tell-Tale Heart",
+        "edition_year": "1843-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "id": 30,
+        "author": "George R.R. Martin",
+        "title": "A Game of Thrones",
+        "edition_year": "1996-01-01",
+        "inStock": true,
+        "date": ""
+    },
+    {
+        "author": "Л.Н.Толстой",
+        "title": "Война и мир",
+        "edition_year": "",
+        "inStock": true,
+        "date": "",
+        "id": 31
+    },
+    {
+        "author": "Е. И. Замятин",
+        "title": "Мы",
+        "edition_year": "",
+        "inStock": false,
+        "date": "2023-10-26",
+        "id": 32,
+        "userName": "Lehridrid"
+    },
+    {
+        "author": "Л.Н.Толстой",
+        "title": "Отцы и дети",
+        "edition_year": "",
+        "inStock": true,
+        "date": "",
+        "id": 33
+    },
+    {
+        "author": "Л.Н.Толстой",
+        "title": "Анна Каренина",
+        "edition_year": "",
+        "inStock": true,
+        "date": "",
+        "id": 34
+    },
+    {
+        "author": "Ф.М. Достоевский",
+        "title": "Идиот",
+        "edition_year": "",
+        "inStock": false,
+        "date": "",
+        "id": 35,
+        "userName": "Lehridrid"
+    },
+    {
+        "author": "Ф.М. Достоевский",
+        "title": "Идиот",
+        "edition_year": "",
+        "inStock": false,
+        "date": "",
+        "id": 36,
+        "userName": "Lehridrid"
+    },
+    {
+        "author": "Ф.М. Достоевский",
+        "title": "Преступление и наказание",
+        "edition_year": "",
+        "inStock": false,
+        "date": "",
+        "id": 37,
+        "userName": "Lehridrid"
+    },
+    {
+        "author": "Ф.М. Достоевский",
+        "title": "Идиот 2",
+        "edition_year": "",
+        "inStock": true,
+        "date": "",
+        "id": 38
+    },
+    {
+        "author": "Л.Н.Толстой",
+        "title": "Война и мир",
+        "edition_year": "",
+        "inStock": true,
+        "date": "",
+        "id": 44
+    },
+    {
+        "author": "Л.Н.Толстой",
+        "title": "Война и мир",
+        "edition_year": "",
+        "inStock": false,
+        "date": "",
+        "id": 45,
+        "userName": "Lehridrid"
+    },
+    {
+        "author": "Л.Н.Толстой",
+        "title": "Война и мир",
+        "edition_year": "",
+        "inStock": true,
+        "date": "",
+        "id": 47
+    },
+    {
+        "author": "Ernest Hemingway",
+        "title": "The Old Man and the Sea",
+        "edition_year": "",
+        "inStock": false,
+        "date": "2023-10-01",
+        "id": 1,
+        "userName": "Lehridrid"
+    }
+]

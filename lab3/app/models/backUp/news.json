@@ -1,0 +1,201 @@
+[
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title1",
+        "content": "content1",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      },
+      {
+        "id": 2,
+        "title": "title2",
+        "content": "content2",
+        "date": "2023-05-16",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 1
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title2",
+        "content": "content2",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 2
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title3",
+        "content": "content3",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 3
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title4",
+        "content": "content4",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 4
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title5",
+        "content": "content5",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 5
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title6",
+        "content": "content6",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 6
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title7",
+        "content": "content7",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 7
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title8",
+        "content": "content8",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 8
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title9",
+        "content": "content9",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 9
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title10",
+        "content": "content10",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 10
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title11",
+        "content": "content11",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 11
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title12",
+        "content": "content12",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 12
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title13",
+        "content": "content13",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 13
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title14",
+        "content": "content14",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 14
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title15",
+        "content": "content15",
+        "date": "2023-05-15",
+        "author": "Aleksey"
+      }
+    ],
+    "userID": 15
+  },
+  {
+    "news": [
+      {
+        "id": 1,
+        "title": "title25",
+        "content": "content25",
+        "date": "2023-05-15",
+        "author": "Elena"
+      }
+    ],
+    "userID": 25
+  }
+]

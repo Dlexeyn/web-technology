@@ -1,19 +1,20 @@
 import {Enemy} from "../entities/enemy.js";
+import {DefenceTile} from "../defences/defenceTile.js";
+import {Tower} from "../defences/tower.js";
 
 export class MapManager {
 	waypoints;
-	constructor(context) {
+	constructor(context, mouse) {
 		this.context = context;
 		this.mapImage = new Image();
 		this.waypoints = [];
 		this.placement = [];
+		this.towers = [];
 		this.enemies = [];
 		this.height = 0;
 		this.width = 0;
-
-		// this.mapImage.onload = () => {
-		// 	this.animate();
-		// }
+		this.mouse = mouse;
+		this.activeTile = undefined;
 	}
 	loadLevel(level){
 		this.mapImage.src = `./assets/levels/${level}.png`
@@ -51,14 +52,22 @@ export class MapManager {
 	};
 
 	placementTilesTo2D(placementTilesArray){
+		let placementTiles2D = [];
 		for (let i = 0; i < placementTilesArray.length; i += this.width){
-			this.placement.push(placementTilesArray.slice(i, i + this.width));
+			placementTiles2D.push(placementTilesArray.slice(i, i + this.width));
 		}
 
-		this.placement.forEach(row => {
-			row.forEach(item => {
+		placementTiles2D.forEach((row, y) => {
+			row.forEach((item, x) => {
 				if(item === 14){
-					// print tile
+					this.placement.push(
+						new DefenceTile({
+							position: {
+								x: x * 64,
+								y: y * 64
+							}
+						})
+					)
 				}
 			})
 		})
@@ -80,10 +89,43 @@ export class MapManager {
 	animate(){
 		requestAnimationFrame(() => this.animate());
 		this.context.drawImage(this.mapImage, 0, 0);
+		this.findActiveTile();
 		this.enemies.forEach(enemy => enemy.update(this.context))
+		this.placement.forEach(tile => tile.update(this.context, this.mouse));
+		this.towers.forEach(tower => tower.draw(this.context, this.enemies[0]))
+	}
+
+	findActiveTile(){
+		this.activeTile = null;
+		for (let i = 0; i < this.placement.length; i++)
+		{
+			let curTile = this.placement[i];
+			if(
+				this.mouse.x > curTile.position.x &&
+				this.mouse.x < curTile.position.x + curTile.size &&
+				this.mouse.y > curTile.position.y &&
+				this.mouse.y < curTile.position.y + curTile.size
+			) {
+				this.activeTile = curTile;
+				break
+			}
+		}
+	}
+
+	createTower(){
+		this.towers.push(new Tower({
+			position: {
+				x: this.activeTile.position.x,
+				y: this.activeTile.position.y
+			}
+		}))
 	}
 
 }
+
+
+
+
 
 
 

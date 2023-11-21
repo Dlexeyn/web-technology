@@ -6,6 +6,7 @@ export class Enemy {
 		this.wayIndex = 0;
 		this.width = 100;
 		this.height = 100;
+		this.radius = 50;
 
 		this.center = {
 			x: this.position.x + this.width / 2,
@@ -19,8 +20,11 @@ export class Enemy {
 
 	draw(context){
 		context.fillStyle = 'red';
-		context.fillRect(this.position.x, this.position.y,
-						 this.width, this.height);
+		// context.fillRect(this.position.x, this.position.y,
+		// 				 this.width, this.height);
+		context.beginPath();
+		context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2);
+		context.fill();
 	}
 
 	update(context) {

@@ -1,5 +1,7 @@
 import {MapManager} from "../managers/mapManager.js";
 import {GameManager} from "../managers/game.js";
+import {EventsManager} from "../managers/eventsManager.js";
+import {PhysicsManager} from "../managers/physicsManager.js";
 
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
@@ -10,10 +12,17 @@ canvas.height = 768;
 context.fillStyle = 'white';
 context.fillRect(0, 0, canvas.width, canvas.height);
 
-const mapManager = new MapManager(context);
+const mouse = {};
+const mapManager = new MapManager(context, mouse);
+const eventManager = new EventsManager(canvas, mapManager);
+const physicsManager = new PhysicsManager(mapManager);
+
 
 const game = new GameManager(mapManager, context);
 game.init().then(r => game.play());
 
-
+window.addEventListener('mousemove', (event) => {
+	mouse.x = event.clientX;
+	mouse.y = event.clientY;
+})
 

@@ -9,8 +9,6 @@ export class MapManager {
 		this.mapImage = new Image();
 		this.waypoints = [];
 		this.placement = [];
-		this.towers = [];
-		this.enemies = [];
 		this.height = 0;
 		this.width = 0;
 		this.mouse = mouse;
@@ -18,6 +16,11 @@ export class MapManager {
 	}
 	loadLevel(level){
 		this.mapImage.src = `./assets/levels/${level}.png`
+	}
+
+	update(){
+		this.context.drawImage(this.mapImage, 0, 0);
+		this.placement.forEach(tile => tile.update(this.context, this.mouse));
 	}
 
 	async generateMap(level){
@@ -71,28 +74,6 @@ export class MapManager {
 				}
 			})
 		})
-		console.log(this.placement);
-	}
-
-	generateEntities(){
-		for(let i = 1; i <= 10; i++){
-			const offset = i * 150;
-			this.enemies.push(
-				new Enemy({
-					position: {x: this.waypoints[0].x - offset, y: this.waypoints[0].y},
-					waypoints: this.waypoints
-				})
-			);
-		}
-	}
-
-	animate(){
-		requestAnimationFrame(() => this.animate());
-		this.context.drawImage(this.mapImage, 0, 0);
-		this.findActiveTile();
-		this.enemies.forEach(enemy => enemy.update(this.context))
-		this.placement.forEach(tile => tile.update(this.context, this.mouse));
-		this.towers.forEach(tower => tower.draw(this.context, this.enemies[0]))
 	}
 
 	findActiveTile(){
@@ -110,15 +91,6 @@ export class MapManager {
 				break
 			}
 		}
-	}
-
-	createTower(){
-		this.towers.push(new Tower({
-			position: {
-				x: this.activeTile.position.x,
-				y: this.activeTile.position.y
-			}
-		}))
 	}
 
 }

@@ -14,11 +14,9 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 
 const mouse = {};
 const mapManager = new MapManager(context, mouse);
-const eventManager = new EventsManager(canvas, mapManager);
-const physicsManager = new PhysicsManager(mapManager);
-
-
-const game = new GameManager(mapManager, context);
+const physicsManager = new PhysicsManager(mapManager, context);
+const game = new GameManager(mapManager, physicsManager, context);
+const eventManager = new EventsManager(canvas, mapManager, game);
 game.init().then(r => game.play());
 
 window.addEventListener('mousemove', (event) => {

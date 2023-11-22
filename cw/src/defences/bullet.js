@@ -1,6 +1,8 @@
 export class Bullet {
-	constructor({position = {x: 0, y: 0}}) {
+	constructor({position = {x: 0, y: 0}, physics = null, enemy}) {
 		this.position = position;
+		this.physics = physics;
+		this.enemy = enemy
 		this.radius = 10;
 		this.color = 'white'
 
@@ -18,17 +20,11 @@ export class Bullet {
 		context.fill();
 	}
 
-	update(context, enemy){
+	update(context){
 		this.draw(context);
 
-		const angle = Math.atan2(
-			enemy.center.y - this.position.y,
-			enemy.center.x - this.position.x
-		);
-		this.velocity.x = Math.cos(angle);
-		this.velocity.y = Math.sin(angle);
+		this.physics.calculateBullet(this, this.enemy);
 
-		this.position.x += this.velocity.x;
-		this.position.y += this.velocity.y;
+
 	}
 }

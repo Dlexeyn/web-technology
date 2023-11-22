@@ -1,18 +1,17 @@
-
 export class EventsManager{
-	constructor(canvas, mapManager) {
+	constructor(canvas, mapManager, gameManager) {
 		this.canvas = canvas;
+		this.gameManager = gameManager;
 		this.mapManager = mapManager;
-
 		canvas.addEventListener('click', event => this.clickHandler(event))
 	}
 
 	clickHandler(event){
-		// console.log(event)
-		// console.log('click');
-		// console.log(this.mapManager)
 		if(this.mapManager.activeTile && !this.mapManager.activeTile.isUsed){
-			this.mapManager.createTower();
+			this.gameManager.generateTower(
+				this.mapManager.activeTile.position.x,
+				this.mapManager.activeTile.position.y
+			);
 		}
 	}
 }

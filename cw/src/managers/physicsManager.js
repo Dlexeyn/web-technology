@@ -36,12 +36,37 @@ export class PhysicsManager{
 			enemy.center.y - bullet.position.y,
 			enemy.center.x - bullet.position.x
 		);
-		const factor = 4;
-		bullet.velocity.x = Math.cos(angle) * factor;
-		bullet.velocity.y = Math.sin(angle) * factor;
+		bullet.velocity.x = Math.cos(angle) * bullet.speed;
+		bullet.velocity.y = Math.sin(angle) * bullet.speed;
 
 		bullet.position.x += bullet.velocity.x;
 		bullet.position.y += bullet.velocity.y;
+	}
+	
+	calculateEnemy(enemy){
+		const point = enemy.way[enemy.wayIndex];
+		const yLen = point.y - enemy.center.y;
+		const xLen = point.x - enemy.center.x;
+		const angle = Math.atan2(yLen, xLen);
+
+		enemy.velocity.x = Math.cos(angle)
+		enemy.velocity.y = Math.sin(angle);
+
+		enemy.position.x += enemy.velocity.x * enemy.speed;
+		enemy.position.y += enemy.velocity.y * enemy.speed;
+
+		enemy.center = {
+			x: enemy.position.x + enemy.width / 2,
+			y: enemy.position.y + enemy.height / 2
+		}
+
+		if (
+			Math.abs(Math.round(enemy.center.x) - Math.round(point.x)) < Math.abs(enemy.velocity.x * enemy.speed) &&
+			Math.abs(Math.round(enemy.center.y) - Math.round(point.y)) < Math.abs(enemy.velocity.y * enemy.speed) &&
+			enemy.wayIndex < enemy.way.length - 1
+		){
+			enemy.wayIndex++;
+		}
 	}
 
 	destroyEnemy(enemy, enemies) {

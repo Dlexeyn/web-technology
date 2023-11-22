@@ -4,6 +4,7 @@ export class Bullet {
 		this.physics = physics;
 		this.enemy = enemy
 		this.radius = 10;
+		this.speed = 5;
 		this.color = 'white'
 
 		this.velocity = {

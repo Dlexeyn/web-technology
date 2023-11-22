@@ -13,7 +13,7 @@ export class ViewManager {
 			"bold 30px Righteous",
 			'center',
 			'middle');
-		this.context.fillText('GameOver', this.width / 2, this.height / 2);
+		this.context.fillText('Game Over', this.width / 2, this.height / 2);
 	}
 
 	setStyle(color, font, textAlign, textBaseLine){

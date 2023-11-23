@@ -1,10 +1,13 @@
 import {Enemy} from "../entities/enemy.js";
 import {Tower} from "../defences/tower.js";
+import {SpriteManager} from "./spriteManager.js";
+import {PhysicsManager} from "./physicsManager.js";
 
 export class GameManager {
-	constructor(mapManager, physicsManager, view, context, canvas) {
-		this.physicsManager = physicsManager;
+	constructor(mapManager, view, context, canvas) {
+		this.physicsManager = new PhysicsManager(mapManager, context);
 		this.mapManager = mapManager;
+		this.spriteManager = new SpriteManager(context);
 		this.view = view;
 		this.context = context;
 		this.canvas = canvas;
@@ -18,6 +21,7 @@ export class GameManager {
 		this.mapManager.loadLevel('level1');
 		await this.mapManager.generateMap('level1');
 		this.generateEntities(this.mapManager.waypoints, this.enemyCount);
+		await this.spriteManager.loadSprites();
 	}
 
 	play() {
@@ -47,6 +51,7 @@ export class GameManager {
 		this.towers.forEach(tower => {
 			tower.update(this.context, this.enemies)
 		})
+		this.view.updateInfoPanel(this.health);
 	}
 
 	generateEntities(way, countEnemies){
@@ -56,7 +61,8 @@ export class GameManager {
 				new Enemy({
 					position: {x: way[0].x - offset, y: way[0].y},
 					waypoints: way,
-					physics: this.physicsManager
+					physics: this.physicsManager,
+					sprites: this.spriteManager
 				})
 			);
 		}
@@ -68,7 +74,8 @@ export class GameManager {
 				x: x,
 				y: y
 			},
-			physics: this.physicsManager
+			physics: this.physicsManager,
+			sprites: this.spriteManager
 		}))
 	}
 

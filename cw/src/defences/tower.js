@@ -1,9 +1,10 @@
 import {Bullet} from "./bullet.js";
 
 export class Tower {
-	constructor({position = {x: 0, y: 0}, physics = null, enemy}) {
+	constructor({position = {x: 0, y: 0}, physics, enemy, sprites}) {
 		this.position = position;
 		this.physics = physics;
+		this.sprites = sprites;
 		this.width = 128;
 		this.height = 64;
 		this.color = 'blue';
@@ -42,7 +43,8 @@ export class Tower {
 					y: this.center.y
 				},
 				physics: this.physics,
-				enemy: this.target
+				enemy: this.target,
+				sprites: this.sprites
 			}))
 		}
 		this.frames++;

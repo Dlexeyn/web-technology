@@ -1,0 +1,58 @@
+{
+  "spritesData" : [
+    {
+      "name" : "bullet-1",
+      "img" : "assets/images/bullet-1.png",
+      "w": 32,
+      "h": 32
+    },
+    {
+      "name" : "bullet-2",
+      "img" : "assets/images/bullet-2.png",
+      "w": 32,
+      "h": 32
+    },
+    {
+      "name" : "ork-2-walk-0",
+      "img" : "assets/images/ork-2-walk-0.png",
+      "w": 100,
+      "h": 100
+    },
+    {
+      "name" : "ork-2-walk-1",
+      "img" : "assets/images/ork-2-walk-1.png",
+      "w": 100,
+      "h": 100
+    },
+    {
+      "name" : "ork-2-walk-2",
+      "img" : "assets/images/ork-2-walk-2.png",
+      "w": 100,
+      "h": 100
+    },
+    {
+      "name" : "ork-2-walk-3",
+      "img" : "assets/images/ork-2-walk-3.png",
+      "w": 100,
+      "h": 100
+    },
+    {
+      "name" : "ork-2-walk-4",
+      "img" : "assets/images/ork-2-walk-4.png",
+      "w": 100,
+      "h": 100
+    },
+    {
+      "name" : "ork-2-walk-5",
+      "img" : "assets/images/ork-2-walk-5.png",
+      "w": 100,
+      "h": 100
+    },
+    {
+      "name" : "ork-2-walk-6",
+      "img" : "assets/images/ork-2-walk-6.png",
+      "w": 100,
+      "h": 100
+    }
+  ]
+}

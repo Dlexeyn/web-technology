@@ -2,8 +2,11 @@ export class ViewManager {
 	constructor(width, height, context) {
 		this.width = width;
 		this.height = height;
-		this.middle_pos_x = this.width / 2;
 		this.context = context;
+	}
+
+	updateInfoPanel(hearts){
+		document.querySelector('#heart-value').innerHTML = hearts;
 	}
 
 	printGameOver(){

@@ -2,3 +2,35 @@
     position: relative;
     display: inline-block;
 }
+
+.panel-item-container{
+    display: flex;
+    align-items: center;
+}
+
+#info-panel {
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+    font-size: 36px;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    display: flex;
+    align-items: center;
+}
+
+#heart {
+    width: 35px;
+    color: red;
+    margin-right: 5px;
+}
+
+#heart-value{
+    color: white;
+}
+
+#money{
+    width: 35px;
+    color: green;
+    margin-right: 5px;
+}

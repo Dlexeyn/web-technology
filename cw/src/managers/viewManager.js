@@ -5,8 +5,9 @@ export class ViewManager {
 		this.context = context;
 	}
 
-	updateInfoPanel(hearts){
+	updateInfoPanel(hearts, wave){
 		document.querySelector('#heart-value').innerHTML = hearts;
+		document.querySelector('#wave-value').innerHTML = wave;
 	}
 
 	printGameOver(){

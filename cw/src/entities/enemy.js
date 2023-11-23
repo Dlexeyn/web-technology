@@ -1,6 +1,6 @@
 
 export class Enemy {
-	constructor({position = {x: 0, y: 0}, waypoints, physics, sprites}) {
+	constructor({position = {x: 0, y: 0}, level, health, speed, waypoints, physics, sprites}) {
 		this.position = position;
 		this.way = waypoints;
 		this.sprites = sprites;
@@ -8,15 +8,17 @@ export class Enemy {
 		this.wayIndex = 0;
 		this.width = 100;
 		this.height = 100;
-		this.health = 100;
 		this.radius = 50;
-		this.speed = 2;
+		this.health = health;
+		this.maxHealth = health;
+		this.level = level;
+		this.speed = speed;
 
 		this.frames = {
 			current: 0,
 			elapsed: 0,
 			hold: 5,
-			max: 7
+			max: 6
 		}
 
 		this.center = {
@@ -31,28 +33,18 @@ export class Enemy {
 	}
 
 	draw(context){
+		this.sprites.drawSprite(`ork-${this.level}-walk-${this.frames.current}`,
+			this.position.x, this.position.y);
 
-		this.sprites.drawSprite(`ork-2-walk-${this.frames.current}`, this.position.x, this.position.y);
+		this.sprites.spriteArrayUpdate(this.frames);
 
-		this.frames.elapsed++;
-		if(this.frames.elapsed % this.frames.hold === 0){
-			this.frames.current++;
-			if (this.frames.current >= this.frames.max - 1){
-				this.frames.current = 0
-			}
-		}
-		// context.fillStyle = 'red';
-		// context.beginPath();
-		// context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2);
-		// context.fill();
-		//
 		context.fillStyle = 'red';
 		context.fillRect(this.position.x, this.position.y - 15,
 						 this.width, 10);
 
 		context.fillStyle = 'green';
 		context.fillRect(this.position.x, this.position.y - 15,
-			this.width * this.health / 100, 10);
+			this.width / this.maxHealth * this.health, 10);
 	}
 
 	update(context) {

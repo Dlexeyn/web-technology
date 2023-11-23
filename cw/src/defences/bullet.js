@@ -5,10 +5,10 @@ export class Bullet {
 		this.sprites = sprites;
 		this.enemy = enemy
 		this.radius = 10;
-		this.speed = 5;
+		this.speed = 10;
 		this.color = 'white'
 		this.image = new Image();
-		this.image.src = 'assets/images/bullet-1.png';
+		this.image.src = 'assets/images/bullet-2.png';
 
 		this.velocity = {
 			x: 0,
@@ -17,13 +17,7 @@ export class Bullet {
 	}
 
 	draw(context){
-		this.sprites.drawSprite('bullet-1', this.position.x, this.position.y);
-		//context.drawImage(this.image, this.position.x, this.position.y, 32, 32);
-		// context.beginPath();
-		// context.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2)
-		//
-		// context.fillStyle = this.color;
-		// context.fill();
+		this.sprites.drawSprite('bullet-2', this.position.x, this.position.y - 64);
 	}
 
 	update(context){

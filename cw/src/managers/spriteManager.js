@@ -50,5 +50,15 @@ export class SpriteManager {
 		}
 		console.log(this.sprites);
 	}
+	
+	spriteArrayUpdate(frames){
+		frames.elapsed++;
+		if (frames.elapsed % frames.hold === 0) {
+			frames.current++
+			if (frames.current >= frames.max) {
+				frames.current = 0
+			}
+		}
+	}
 }
 

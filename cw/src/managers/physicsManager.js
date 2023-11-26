@@ -1,32 +1,33 @@
 export class PhysicsManager{
-	constructor(mapManager, context) {
-		this.mapManager = mapManager;
+	constructor(game, context) {
 		this.context = context;
+		this.game = game;
 	}
 
-	bulletsUpdate(tower, enemies){
-		tower.target = null;
+	bulletsUpdate(defenceBuilding, enemies){
+		defenceBuilding.target = null;
 		const validEnemies = enemies.filter(enemy => {
-			const dX = enemy.center.x - tower.position.x;
-			const dY = enemy.center.y - tower.position.y;
+			const dX = enemy.center.x - defenceBuilding.center.x;
+			const dY = enemy.center.y - defenceBuilding.center.y;
 			const distance = Math.hypot(dX, dY);
-			return distance < enemy.radius + tower.defRadius;
+			return distance < enemy.radius + defenceBuilding.defRadius;
 		})
-		tower.target = validEnemies[0];
+		defenceBuilding.target = validEnemies[0];
 
-		for (let i = tower.bullets.length - 1; i >= 0; i--){
-			let bullet = tower.bullets[i];
+		for (let i = defenceBuilding.bullets.length - 1; i >= 0; i--){
+			let bullet = defenceBuilding.bullets[i];
 			bullet.update(this.context);
 			const dX = bullet.enemy.center.x - bullet.position.x;
 			const dY = bullet.enemy.center.y - bullet.position.y;
 			const distance = Math.hypot(dX, dY);
 
 			if (distance < bullet.radius + bullet.enemy.radius){
-				bullet.enemy.health -= 20;
+				bullet.enemy.health -= defenceBuilding.damage;
 				if(bullet.enemy.health <= 0){
 					this.destroyEnemy(bullet.enemy, enemies);
+					this.game.addMoney();
 				}
-				tower.bullets.splice(i, 1);
+				defenceBuilding.bullets.splice(i, 1);
 			}
 		}
 	}

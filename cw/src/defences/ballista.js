@@ -1,20 +1,21 @@
 import {Bullet} from "./bullet.js";
 
-export class Tower {
+export class Ballista {
 	constructor({position = {x: 0, y: 0}, level, physics, enemy, sprites}) {
 		this.position = position;
 		this.physics = physics;
 		this.sprites = sprites;
 		this.level = level;
 		this.width = 128;
-		this.height = 128;
-		this.defRadius = 250;
-		this.damage = 15;
+		this.height = 64;
+		this.color = 'blue';
+		this.defRadius = 375;
+		this.damage = 70;
 		this.frames = {
-			max: 6,
+			max: 19,
 			current: 0,
 			elapsed: 0,
-			hold: 3
+			hold: 9
 		}
 		this.target = null;
 
@@ -27,13 +28,8 @@ export class Tower {
 	}
 
 	draw(context, enemies){
-		this.sprites.drawSprite(`tower-1-${this.frames.current}`,
-			this.position.x, this.position.y - 128);
-
-		// context.beginPath();
-		// context.arc(this.center.x, this.center.y, this.defRadius, 0, Math.PI * 2)
-		// context.fillStyle = 'rgba(0, 0, 255, 0.15)';
-		// context.fill();
+		this.sprites.drawSprite(`ballista-1-${this.frames.current}`,
+			this.position.x, this.position.y - 64);
 	}
 
 	update(context, enemies){
@@ -43,13 +39,13 @@ export class Tower {
 			this.sprites.spriteArrayUpdate(this.frames);
 		}
 
-		if(this.frames.elapsed % this.frames.hold === 0 && this.frames.current === 5 && this.target){
+		if(this.frames.elapsed % this.frames.hold === 0 && this.frames.current === 6 && this.target){
 			this.bullets.push(new Bullet({
 				position: {
 					x: this.center.x,
 					y: this.center.y
 				},
-				type: 2,
+				type: 1,
 				physics: this.physics,
 				enemy: this.target,
 				sprites: this.sprites
@@ -57,4 +53,5 @@ export class Tower {
 		}
 		this.physics.bulletsUpdate(this, enemies);
 	}
+
 }

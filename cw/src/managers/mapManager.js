@@ -1,6 +1,6 @@
 import {Enemy} from "../entities/enemy.js";
 import {DefenceTile} from "../defences/defenceTile.js";
-import {Tower} from "../defences/tower.js";
+import {Ballista} from "../defences/ballista.js";
 
 export class MapManager {
 	waypoints;

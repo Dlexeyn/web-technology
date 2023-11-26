@@ -1,0 +1,83 @@
+.game-container {
+    position: relative;
+    display: inline-block;
+}
+
+.panel-item-container{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+#info-panel {
+    position: absolute;
+    bottom: 10px;
+    left: 8px;
+    font-size: 36px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#buttons-panel {
+    position: absolute;
+    bottom: 10px;
+    right: 8px;
+    font-size: 36px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#heart {
+    width: 35px;
+    color: red;
+    margin-right: 5px;
+}
+
+#wave {
+    width: 35px;
+    color: blueviolet;
+    margin-right: 5px;
+}
+
+#heart-value{
+    color: white;
+}
+
+#money{
+    width: 35px;
+    color: green;
+    margin-right: 5px;
+}
+
+.btn-add {
+    width: 76px;
+    height: 130px;
+    background: #8d6e63;
+    font-size: 20px;
+    color: white;
+    border-radius: 7px;
+    box-shadow: 0 7px 0 #6d4c41;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+    padding: 20px 25px;
+    top: 0;
+    cursor: pointer;
+    margin:0 20px;
+}
+
+.btn-add:active {
+    top: 3px;
+    box-shadow: 0 2px 0 #6d4c41;
+    transition: all .2s;
+}
+
+#add-tower{
+    background-image: url("../src/assets/images/tower-1-0.png");
+}
+
+#add-ballista{
+    background-image: url("../src/assets/images/ballista.png");
+}

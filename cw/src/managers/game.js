@@ -6,11 +6,13 @@ import {Tower} from "../defences/tower.js";
 import {SoundManager} from "./soundManager.js";
 
 export class GameManager {
-	constructor(mapManager, view, context, canvas) {
+	constructor(mapManager, view, context, canvas, level) {
 		this.physicsManager = new PhysicsManager(this, context);
 		this.mapManager = mapManager;
 		this.spriteManager = new SpriteManager(context);
 		this.soundManager = new SoundManager();
+		this.level = level;
+		this.updateID = 0;
 		this.view = view;
 		this.context = context;
 		this.canvas = canvas;
@@ -20,11 +22,12 @@ export class GameManager {
 		this.enemyCount = 3;
 		this.wave = 1;
 		this.money = 200;
+		this.isPause = false;
 	}
 
 	async init() {
-		this.mapManager.loadLevel('level1');
-		await this.mapManager.generateMap('level1');
+		this.mapManager.loadLevel(this.level);
+		await this.mapManager.generateMap(this.level);
 		this.soundManager.init();
 		this.generateWave(this.mapManager.waypoints, this.enemyCount);
 		await this.spriteManager.loadSprites();
@@ -35,18 +38,34 @@ export class GameManager {
 		this.soundManager.play('assets/music/aliens-run.mp3', {looping: true});
 	}
 
-	endGame(updateID, endStatus){
-		cancelAnimationFrame(updateID);
+	pause(){
+		if(!this.isPause){
+			cancelAnimationFrame(this.updateID);
+			this.view.printPause();
+			this.soundManager.toggleMute();
+			this.view.showPauseMenu();
+		} else {
+			this.view.showPanels();
+			this.soundManager.toggleMute();
+			this.view.hidePauseMenu();
+			this.update();
+		}
+		this.isPause = !this.isPause;
+	}
+
+	endGame(endStatus){
+		cancelAnimationFrame(this.updateID);
 		this.towers = [];
 		const username = localStorage.getItem('username');
 		localStorage.removeItem('username');
 		const score = this.calculateScore();
 		localStorage.setItem(username, score + '');
+		this.view.showPauseMenu();
 		this.view.printEnd(endStatus, username, score);
 	}
 
 	update(){
-		const updateID = requestAnimationFrame(() => this.update());
+		this.updateID = requestAnimationFrame(() => this.update());
 		this.mapManager.update();
 		this.mapManager.findActiveTile();
 		for (let i = this.enemies.length - 1; i >= 0; i--){
@@ -59,7 +78,7 @@ export class GameManager {
 				if(this.health <= 0){
 					this.soundManager.stopAll();
 					this.soundManager.play('assets/music/game-over.mp3');
-					this.endGame(updateID, "Поражение");
+					this.endGame("Поражение");
 				}
 			}
 		}
@@ -72,11 +91,16 @@ export class GameManager {
 			tower.update(this.context, this.enemies)
 		})
 		this.view.updateInfoPanel(this.health, this.wave, this.money);
+		this.view.updateLeftPanel(
+			localStorage.getItem('username'),
+			this.calculateScore(),
+			this.level
+		);
 
 		if (this.wave === 15){
 			this.soundManager.stopAll();
 			this.soundManager.play('assets/music/victory.mp3');
-			this.endGame(updateID, "Победа");
+			this.endGame("Победа");
 		}
 	}
 
@@ -159,6 +183,6 @@ export class GameManager {
 	calculateScore() {
 		if (this.wave === 1)
 			return 0;
-		return this.money * 2 + this.health * 1000 + this.wave * 50;
+		return (this.money * 2 + this.wave * 10) * this.health;
 	}
 }

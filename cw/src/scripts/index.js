@@ -14,10 +14,12 @@ canvas.height = 768;
 context.fillStyle = 'white';
 context.fillRect(0, 0, canvas.width, canvas.height);
 
+const level = localStorage.getItem('load');
+
 const mouse = {};
 const viewManager = new ViewManager(canvas.width, canvas.height, context);
 const mapManager = new MapManager(context, mouse);
-const game = new GameManager(mapManager, viewManager, context, canvas);
+const game = new GameManager(mapManager, viewManager, context, canvas, level);
 const eventManager = new EventsManager(canvas, mapManager, game);
 game.init().then(r => game.play());
 

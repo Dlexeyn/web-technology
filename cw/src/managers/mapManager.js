@@ -20,7 +20,9 @@ export class MapManager {
 
 	update(){
 		this.context.drawImage(this.mapImage, 0, 0);
-		this.placement.forEach(tile => tile.update(this.context, this.mouse));
+		for (let place of this.placement){
+			place.update(this.context, this.mouse);
+		}
 	}
 
 	async generateMap(level){
@@ -62,7 +64,7 @@ export class MapManager {
 
 		placementTiles2D.forEach((row, y) => {
 			row.forEach((item, x) => {
-				if(item === 14){
+				if(item === 14 || item === 716){
 					this.placement.push(
 						new DefenceTile({
 							position: {

@@ -66,9 +66,39 @@ export class ViewManager {
 		})
 	}
 
+	updateLeftPanel(name, score, level){
+		document.querySelector('#level-label').innerHTML = level;
+		document.querySelector('#name-label').innerHTML = name;
+		document.querySelector('#score-label').innerHTML = 'Score: ' + score;
+	}
+
+	printPause(){
+		this.hidePanels();
+		this.context.fillStyle = 'rgba(0,0,0,0.7)';
+		this.context.fillRect(0, 0, this.width, this.height);
+		this.setStyle('#f38319',
+			"bold 30px Righteous",
+			'center',
+			'middle');
+		this.context.fillText('Pause', this.MIDDLE_POS, this.height / 2);
+	}
+
+	showPauseMenu(){
+		document.querySelector('#exit').style.display = 'flex';
+	}
+
+	hidePauseMenu(){
+		document.querySelector('#exit').style.display = 'none';
+	}
+
 	hidePanels(){
 		document.querySelector('#buttons-panel').style.display = 'none';
 		document.querySelector('#info-panel').style.display = 'none';
+	}
+
+	showPanels(){
+		document.querySelector('#buttons-panel').style.display = 'flex';
+		document.querySelector('#info-panel').style.display = 'flex';
 	}
 }
 

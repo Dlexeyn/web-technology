@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Выбор уровня</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="form_auth_block">
+	<h1 class="form_auth_block_head_text">Игра Tower defence</h1>
+</div>
+<div class="levels-container">
+	<input type="button" id="level_1" class="btn-level" value="Уровень 1" />
+	<input type="button" id="level_2" class="btn-level" value="Уровень 2" />
+</div>
+<script>
+	document.getElementById("level_1").addEventListener("click", function (event) {
+		event.preventDefault();
+		localStorage.setItem("load", "level_1");
+		window.location.href = "./main.html";
+	});
+	
+	document.getElementById("level_2").addEventListener("click", function (event) {
+		event.preventDefault();
+		localStorage.setItem("load", "level_2");
+		window.location.href = "./main.html";
+		
+	});
+</script>
+</body>
+</html>

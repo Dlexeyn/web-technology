@@ -3,6 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
 	<title>Game</title>
 	<style>
 		body{
@@ -14,6 +18,9 @@
 <body>
 	<div class="game-container">
 		<canvas></canvas>
+		<div id="menu">
+			<button class="btn-exit" id="exit">Выйти в меню</button>
+		</div>
 		<div id="info-panel">
 			<div class="panel-item-container">
 				<svg id="heart"
@@ -55,18 +62,22 @@
 					      stroke-linejoin="round"
 					      d="M3 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062A1.125 1.125 0 013 16.81V8.688zM12.75 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062a1.125 1.125 0 01-1.683-.977V8.688z" />
 				</svg>
-				
 				<div id="wave-value"></div>
 			</div>
 		</div>
 		
 		<div id="buttons-panel">
-			Купить:
 			<button class="btn-add" id="add-tower">80</button>
 			<button class="btn-add" id="add-ballista">120</button>
+			<button class="btn-add" id="add-health"></button>
+			<button class="btn-add" id="add-money"></button>
 		</div>
 	</div>
-	
+	<div id="left-panel">
+		<h1 id="level-label"></h1>
+		<p id="name-label"></p>
+		<p id="score-label"></p>
+	</div>
 	<script src="scripts/index.js" type="module"></script>
 </body>
 </html>

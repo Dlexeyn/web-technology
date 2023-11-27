@@ -9,6 +9,16 @@
     margin-right: 40px;
 }
 
+#menu-button{
+    position: absolute;
+    bottom: 10px;
+    right: 8px;
+    font-size: 36px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
 #info-panel {
     position: absolute;
     bottom: 10px;
@@ -51,6 +61,35 @@
     margin-right: 5px;
 }
 
+#menu {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    top: 50%;
+    left: 100%;
+}
+
+#exit{
+    display: none;
+}
+
+.btn-exit{
+    width: 210px;
+    height: 70px;
+    background: #8d6e63;
+    font-size: 20px;
+    color: white;
+    border-radius: 7px;
+    box-shadow: 0 7px 0 #6d4c41;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+    padding: 20px 25px;
+    top: 0;
+    cursor: pointer;
+    margin:0 20px;
+}
+
 .btn-add {
     width: 76px;
     height: 130px;
@@ -68,7 +107,7 @@
     margin:0 20px;
 }
 
-.btn-add:active {
+.btn-add:active, .btn-exit:active{
     top: 3px;
     box-shadow: 0 2px 0 #6d4c41;
     transition: all .2s;
@@ -80,4 +119,40 @@
 
 #add-ballista{
     background-image: url("../src/assets/images/ballista.png");
+}
+
+#add-health{
+    background-image: url("../src/assets/images/heart.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#add-money{
+    background-image: url("../src/assets/images/add-money.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#left-panel{
+    position: absolute;
+    top: 10px;
+    right: 10%;
+    display: inline-block;
+    align-items: center;
+}
+
+#left-panel p{
+    color: white;
+    font-size: 20px;
+}
+
+#left-panel h1 {
+    font-family: 'Righteous', cursive;
+    position: relative;
+    color: #f7b21f;
+    display: inline-block;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    font-size: 3em;
+    line-height: 1;
 }
